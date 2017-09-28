@@ -1,22 +1,5 @@
 package main
 
-type GemCard struct {
-	cost GemCost
-	vp   int
-}
-
-type GemCost struct {
-	black int
-	white int
-	red   int
-	green int
-	blue  int
-}
-
-type Deck struct {
-	deck [][]GemCard
-}
-
 type Bank struct {
 	black int
 	white int

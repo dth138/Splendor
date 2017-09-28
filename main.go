@@ -7,7 +7,7 @@ import (
 func main() {
 	fmt.Printf("Let's win this game!\n")
 
-	hbank := NewHouseBank()
-
-	fmt.Println(hbank)
+	// hbank := NewHouseBank()
+	d := NewShuffledDeck()
+	fmt.Println(d)
 }
