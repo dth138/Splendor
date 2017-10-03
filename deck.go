@@ -422,5 +422,48 @@ func InitDeck() [][]GemCard {
 			cost:  GemCost{black: 5, white: 3, red: 3, green: 3, blue: 0},
 			yield: "blue"})
 
-	return [][]GemCard{t1, t2, t3}
+	//Royalty Tier, 10 cards
+	tr := make([]GemCard, 10)
+	tr = append(tr,
+		GemCard{vp: 3,
+			cost:  GemCost{black: 0, white: 0, red: 4, green: 4, blue: 0},
+			yield: "none"})
+	tr = append(tr,
+		GemCard{vp: 3,
+			cost:  GemCost{black: 3, white: 3, red: 0, green: 0, blue: 3},
+			yield: "none"})
+	tr = append(tr,
+		GemCard{vp: 3,
+			cost:  GemCost{black: 0, white: 0, red: 0, green: 4, blue: 4},
+			yield: "none"})
+	tr = append(tr,
+		GemCard{vp: 3,
+			cost:  GemCost{black: 0, white: 3, red: 0, green: 3, blue: 3},
+			yield: "none"})
+	tr = append(tr,
+		GemCard{vp: 3,
+			cost:  GemCost{black: 0, white: 4, red: 0, green: 0, blue: 4},
+			yield: "none"})
+	tr = append(tr,
+		GemCard{vp: 3,
+			cost:  GemCost{black: 3, white: 0, red: 3, green: 3, blue: 0},
+			yield: "none"})
+	tr = append(tr,
+		GemCard{vp: 3,
+			cost:  GemCost{black: 4, white: 0, red: 4, green: 0, blue: 0},
+			yield: "none"})
+	tr = append(tr,
+		GemCard{vp: 3,
+			cost:  GemCost{black: 4, white: 4, red: 0, green: 0, blue: 0},
+			yield: "none"})
+	tr = append(tr,
+		GemCard{vp: 3,
+			cost:  GemCost{black: 0, white: 0, red: 3, green: 3, blue: 3},
+			yield: "none"})
+	tr = append(tr,
+		GemCard{vp: 3,
+			cost:  GemCost{black: 3, white: 3, red: 3, green: 0, blue: 0},
+			yield: "none"})
+
+	return [][]GemCard{t1, t2, t3, tr}
 }
