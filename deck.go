@@ -14,18 +14,18 @@ type GemCost struct {
 	blue  int
 }
 
-type Deck struct {
-	deck [][]GemCard
-}
+// type Deck struct {
+// 	deck [][]GemCard
+// }
 
-func NewShuffledDeck() *Deck {
-	return NewDeck()
-}
-
-func NewDeck() *Deck {
-	d := new(Deck)
-	return d
-}
+// func NewShuffledDeck() *Deck {
+// 	return NewDeck()
+// }
+//
+// func NewDeck() *Deck {
+// 	d := new(Deck)
+// 	return Init
+// }
 
 func InitDeck() [][]GemCard {
 	t1 := make([]GemCard, 40)
