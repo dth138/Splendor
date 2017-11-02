@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"strconv"
 )
 
@@ -42,8 +43,15 @@ func PrettyPrintTier(t []GemCard) {
 }
 
 //ShuffleCards shuffles the remaining cards in each tier
-func (d *GemCard) ShuffleCards() {
-
+func ShuffleCards(d []GemCard) {
+	for i := 0; i < 7; i++ { //Shuffling requires 7 shuffles
+		for j := range d {
+			shuf := rand.Intn(len(d))
+			t := d[j]
+			d[j] = d[shuf]
+			d[shuf] = t
+		}
+	}
 }
 
 // InitDeck Returns a new deck of Splendor Cards, of Type [][]GemCard

@@ -1,5 +1,6 @@
 package main
 
+//Bank holds the resources of the bank
 type Bank struct {
 	black int
 	white int
@@ -9,6 +10,7 @@ type Bank struct {
 	gold  int
 }
 
+//NewHouseBank initializes the game pieces to begin play
 func NewHouseBank() *Bank {
 	b := new(Bank)
 	b.black = 7
@@ -20,6 +22,7 @@ func NewHouseBank() *Bank {
 	return b
 }
 
+//NewPlayerBank creates an empty player inventory
 func NewPlayerBank() *Bank {
 	b := new(Bank)
 	b.black = 0
