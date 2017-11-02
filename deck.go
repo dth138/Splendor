@@ -1,11 +1,18 @@
 package main
 
+import (
+	"fmt"
+	"strconv"
+)
+
+//GemCard is a playpiece in Splendor
 type GemCard struct {
 	cost  GemCost
 	yield string
 	vp    int
 }
 
+//GemCost is the purchase price of a card
 type GemCost struct {
 	black int
 	white int
@@ -14,21 +21,34 @@ type GemCost struct {
 	blue  int
 }
 
-// type Deck struct {
-// 	deck [][]GemCard
-// }
+//PrettyPrintCard Prints a card in readable format
+func PrettyPrintCard(c GemCard) {
+	fmt.Println("_______________")
+	fmt.Println("_" + c.yield + "      " + strconv.Itoa(c.vp))
+	fmt.Println("_             _")
+	fmt.Println("_ white     " + strconv.Itoa(c.cost.white) + " _")
+	fmt.Println("_ blue      " + strconv.Itoa(c.cost.blue) + " _")
+	fmt.Println("_ green     " + strconv.Itoa(c.cost.green) + " _")
+	fmt.Println("_ red       " + strconv.Itoa(c.cost.red) + " _")
+	fmt.Println("_ black     " + strconv.Itoa(c.cost.black) + " _")
+	fmt.Println("_______________")
+}
 
-// func NewShuffledDeck() *Deck {
-// 	return NewDeck()
-// }
-//
-// func NewDeck() *Deck {
-// 	d := new(Deck)
-// 	return Init
-// }
+//PrettyPrintTier Prints a row of cards
+func PrettyPrintTier(t []GemCard) {
+	for _, c := range t {
+		PrettyPrintCard(c)
+	}
+}
 
+//ShuffleCards shuffles the remaining cards in each tier
+func (d *GemCard) ShuffleCards() {
+
+}
+
+// InitDeck Returns a new deck of Splendor Cards, of Type [][]GemCard
 func InitDeck() [][]GemCard {
-	t1 := make([]GemCard, 40)
+	t1 := make([]GemCard, 0)
 	//Black, 8 Cards
 	t1 = append(t1,
 		GemCard{vp: 1,
@@ -199,7 +219,7 @@ func InitDeck() [][]GemCard {
 			cost:  GemCost{black: 2, white: 1, red: 0, green: 0, blue: 0},
 			yield: "blue"})
 
-	t2 := make([]GemCard, 30)
+	t2 := make([]GemCard, 0)
 	//Black 6 cards
 	t2 = append(t2,
 		GemCard{vp: 3,
@@ -330,8 +350,7 @@ func InitDeck() [][]GemCard {
 			cost:  GemCost{black: 0, white: 0, red: 3, green: 2, blue: 2},
 			yield: "blue"})
 
-	t3 := make([]GemCard, 20)
-
+	t3 := make([]GemCard, 0)
 	//Black 4 Cards
 	t3 = append(t3,
 		GemCard{vp: 5,
@@ -423,7 +442,7 @@ func InitDeck() [][]GemCard {
 			yield: "blue"})
 
 	//Royalty Tier, 10 cards
-	tr := make([]GemCard, 10)
+	tr := make([]GemCard, 0)
 	tr = append(tr,
 		GemCard{vp: 3,
 			cost:  GemCost{black: 0, white: 0, red: 4, green: 4, blue: 0},
