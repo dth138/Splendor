@@ -2,7 +2,6 @@ package main
 
 func main() {
 	deck := InitDeck()
-
-	ShuffleCards(deck[3])
+	ShuffleDeck(deck)
 	PrettyPrintTier(deck[3])
 }

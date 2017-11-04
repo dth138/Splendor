@@ -42,8 +42,8 @@ func PrettyPrintTier(t []GemCard) {
 	}
 }
 
-//ShuffleCards shuffles the remaining cards in each tier
-func ShuffleCards(d []GemCard) {
+//ShuffleStack shuffles the remaining cards in each tier
+func shuffleStack(d []GemCard) {
 	for i := 0; i < 7; i++ { //Shuffling requires 7 shuffles
 		for j := range d {
 			shuf := rand.Intn(len(d))
@@ -51,6 +51,13 @@ func ShuffleCards(d []GemCard) {
 			d[j] = d[shuf]
 			d[shuf] = t
 		}
+	}
+}
+
+//ShuffleDeck shuffles all cards
+func ShuffleDeck(d [][]GemCard) {
+	for i := 0; i < 4; i++ {
+		shuffleStack(d[i])
 	}
 }
 
