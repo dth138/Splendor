@@ -11,6 +11,6 @@ func main() {
 	playerFour := NewPlayer("Julia")
 
 	players := []Player{*playerOne, *playerTwo, *playerThree, *playerFour}
-
-	RunSimulation(deck, *bank, players)
+	board := NewBoard(deck)
+	RunSimulation(deck, board, *bank, players)
 }

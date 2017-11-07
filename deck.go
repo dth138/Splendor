@@ -22,6 +22,25 @@ type GemCost struct {
 	blue  int
 }
 
+//NewBoard creates a board state from a given Deck
+func NewBoard(deck [][]GemCard) [][]GemCard {
+	t1 := make([]GemCard, 0)
+	t2 := make([]GemCard, 0)
+	t3 := make([]GemCard, 0)
+	tr := make([]GemCard, 0)
+	for i := 0; i < 3; i++ {
+		t1 = append(t1, deck[0][(len(deck[0])-1)])
+		deck[0] = deck[0][:(len(deck[0]) - 1)]
+		t2 = append(t2, deck[1][(len(deck[1])-1)])
+		deck[1] = deck[1][:(len(deck[1]) - 1)]
+		t3 = append(t3, deck[2][(len(deck[2])-1)])
+		deck[2] = deck[2][:(len(deck[2]) - 1)]
+		tr = append(tr, deck[3][(len(deck[3])-1)])
+		deck[3] = deck[3][:(len(deck[3]) - 1)]
+	}
+	return [][]GemCard{t1, t2, t3, tr}
+}
+
 //PrettyPrintCard Prints a card in readable format
 func PrettyPrintCard(c GemCard) {
 	fmt.Println("_______________")
