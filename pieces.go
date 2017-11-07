@@ -33,3 +33,13 @@ func NewPlayerBank() *Bank {
 	b.gold = 0
 	return b
 }
+
+//Init creates an empty bank as a method
+func (b Bank) Init() {
+	b.black = 0
+	b.white = 0
+	b.red = 0
+	b.green = 0
+	b.blue = 0
+	b.gold = 0
+}
